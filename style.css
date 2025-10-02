@@ -866,6 +866,11 @@ body {
   .obligatory-readings li {
     font-size: 13px;
     padding: 4px 0;
+    padding-left: 0;
+  }
+  
+  .obligatory-readings li:before {
+    display: none;
   }
   
   .optional-readings {
@@ -880,6 +885,11 @@ body {
   .optional-readings li {
     font-size: 13px;
     padding: 4px 0;
+    padding-left: 0;
+  }
+  
+  .optional-readings li:before {
+    display: none;
   }
   
   .book-link {
@@ -1040,6 +1050,11 @@ body {
   .obligatory-readings li {
     font-size: 12px;
     padding: 3px 0;
+    padding-left: 0;
+  }
+  
+  .obligatory-readings li:before {
+    display: none;
   }
   
   .optional-readings {
@@ -1054,6 +1069,11 @@ body {
   .optional-readings li {
     font-size: 12px;
     padding: 3px 0;
+    padding-left: 0;
+  }
+  
+  .optional-readings li:before {
+    display: none;
   }
   
   .book-link {
