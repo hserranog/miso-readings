@@ -186,14 +186,77 @@ const readingsData = {
         },
         {
           title: "The Principles of OOD",
+          author: "Rob Martin",
           coverImage: "",
           link: "http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod",
           obligatoryReadings: ["SRP", "DIP"],
         }
       ],
-      6: [],
-      7: [],
-      8: [],
+      6: [
+        {
+          title: "Software Architecture in Practice, 4th Edition",
+          author: "Len Bass, Paul Clements, Rick Kazman",
+          coverImage: "images/software_architecture_in_practice_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005389583407681",
+          obligatoryReadings: ["Chapter 8. Modifiability / 8.2 Tactics for Modifiability"],
+          optionalReadings: ["Chapter 8. Modifiability"]
+        },
+        {
+          title: "The Model-View-Controller (MVC) Its Past and Present",
+          author: "Trygve Reenskaug, University of Oslo",
+          coverImage: "",
+          link: "https://folk.universitetetioslo.no/trygver/2003/javazone-jaoo/MVC_pattern.pdf"
+        },
+        {
+          title: "Patterns - WPF Apps With The Model-View-ViewModel Design Pattern",
+          author: "Josh Smith",
+          coverImage: "",
+          link: "https://learn.microsoft.com/en-us/archive/msdn-magazine/2009/february/patterns-wpf-apps-with-the-model-view-viewmodel-design-pattern"
+        },
+        {
+          title: "GUI Architectures / Model View Controller",
+          author: "Martin Fowler",
+          coverImage: "images/martin_fowler.png",
+          link: "https://www.martinfowler.com/eaaDev/uiArchs.html#ModelViewController",
+          requiredReadings: ["Model View Controller"]
+        },
+        {
+          title: "The Evolution of MVC",
+          author: "Stephen Walther",
+          coverImage: "",
+          link: "http://stephenwalther.com/archive/2008/08/24/the-evolution-of-mvc",
+        }
+      ],
+      7: [
+        {
+          title: "Clean Code in Python: Develop maintainable and efficient code, 2nd Edition",
+          author: "Mariano Anaya",
+          coverImage: "images/clean_code_in_python_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005390532207681",
+          obligatoryReadings: ["Chapter 4. The SOLID Principles"],
+        },
+        {
+          title: "The Principles of OOD",
+          author: "Rob Martin",
+          coverImage: "",
+          link: "http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod",
+        }
+      ],
+      8: [
+        {
+          title: "The LMAX Architecture",
+          author: "Martin Fowler",
+          coverImage: "images/martin_fowler.png",
+          link: "https://martinfowler.com/articles/lmax.html"
+        },
+        {
+          title: "Software Architecture in Action",
+          author: "Flavio Oquendo, Jair Leite Thaís Batista",
+          coverImage: "images/software_architecture_in_action.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005727669907681",
+          obligatoryReadings: ["Chapter 9. Designing Modi ability in Software Architectures"],
+        },
+      ],
     }
   },
   class3: {

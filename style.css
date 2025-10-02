@@ -203,21 +203,24 @@ body {
 
 /* Week Navigation */
 .week-navigation-section {
-  padding: 32px 0;
-  background: #f7f9fa;
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  width: 280px;
 }
 
 .week-nav-card {
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 24px;
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
 }
 
 .week-info h4 {
@@ -250,33 +253,71 @@ body {
 
 .week-controls {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .week-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 12px 20px;
-  border: 1px solid #e0e0e0;
-  border-radius: 6px;
-  background: white;
-  color: #1c1c1c;
+  padding: 14px 24px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  color: #374151;
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.week-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: left 0.5s;
 }
 
 .week-btn:hover:not(:disabled) {
-  background: #f7f9fa;
+  background: linear-gradient(135deg, #0056d3 0%, #0041a3 100%);
   border-color: #0056d3;
-  color: #0056d3;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 86, 211, 0.3);
+}
+
+.week-btn:hover:not(:disabled)::before {
+  left: 100%;
+}
+
+.week-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(0, 86, 211, 0.2);
 }
 
 .week-btn:disabled {
-  opacity: 0.5;
+  opacity: 0.4;
   cursor: not-allowed;
+  background: #f3f4f6;
+  color: #9ca3af;
+  border-color: #e5e7eb;
+}
+
+.week-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.week-btn:hover:not(:disabled) svg {
+  transform: scale(1.1);
 }
 
 /* Main Content */
@@ -284,6 +325,7 @@ body {
   padding: 48px 0;
   background: #f7f9fa;
   min-height: 60vh;
+  margin-left: 320px;
 }
 
 .readings-grid {
@@ -702,43 +744,69 @@ body {
     width: 100%;
   }
   
-  /* Week Navigation Mobile */
+  /* Week Navigation Mobile - floating bottom bar */
   .week-navigation-section {
-    padding: 24px 0;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    top: auto;
+    width: auto;
+    z-index: 100;
   }
   
   .week-nav-card {
-    flex-direction: column;
-    gap: 20px;
-    text-align: center;
-    padding: 20px 16px;
-    margin: 0 16px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    gap: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
   }
   
-  .week-info h4 {
-    font-size: 12px;
-  }
-  
-  .week-number {
-    font-size: 24px;
+  .week-info {
+    flex: 1;
+    text-align: left;
+    min-width: 0;
   }
   
   .week-controls {
-    width: 100%;
-    justify-content: center;
-    gap: 8px;
+    flex-direction: row;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  
+  .week-info h4 {
+    font-size: 10px;
+    margin-bottom: 2px;
+  }
+  
+  .week-number {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .reading-count {
+    font-size: 10px;
   }
   
   .week-btn {
-    flex: 1;
-    max-width: 120px;
-    padding: 12px 16px;
-    font-size: 14px;
+    padding: 6px 8px;
+    font-size: 11px;
+    min-width: 60px;
+    border-radius: 6px;
+  }
+  
+  .week-btn span {
+    display: none; /* Hide text on very small screens */
   }
   
   /* Reading Cards Mobile */
   .main-content {
     padding: 32px 0;
+    margin-left: 0;
+    padding-bottom: 70px; /* Add space for floating week selector */
   }
   
   .readings-grid {
@@ -991,6 +1059,55 @@ body {
   .book-link {
     padding: 10px 14px;
     font-size: 13px;
+  }
+  
+  /* Mobile week selector - show as floating bottom bar */
+  .week-navigation-section {
+    position: fixed;
+    bottom: 8px;
+    left: 8px;
+    right: 8px;
+    top: auto;
+    width: auto;
+    z-index: 100;
+  }
+  
+  .week-nav-card {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 10px;
+    gap: 6px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .week-info {
+    flex: 1;
+    text-align: left;
+    min-width: 0;
+  }
+  
+  .week-controls {
+    flex-direction: row;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  
+  .week-btn {
+    padding: 4px 6px;
+    font-size: 10px;
+    min-width: 50px;
+    border-radius: 4px;
+  }
+  
+  .week-btn span {
+    display: none; /* Hide text on very small screens */
+  }
+  
+  .main-content {
+    margin-left: 0;
+    padding-bottom: 60px; /* Add space for floating week selector */
   }
 }
 
