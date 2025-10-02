@@ -23,7 +23,7 @@ const readingsData = {
           description: "<ul><li>¿Qué es una historia de usuario y cómo se define?</li><li>¿Qué es una tarjeta de las 3C?</li><li>¿Cuál es la importancia de las conversaciones al escribir historias de usuario?</li><li>¿Por qué son importantes los criterios (o condiciones) de aceptación en una historia?</li><li>¿En qué momento se debe detallar una historia de usuario?</li><li>¿Qué significa detallar una historia de usuario?</li><li>¿Qué características debe cumplir una historia de usuario para que sea considerado una buena historia?</li></ul>",
           coverImage: "images/essential_scrum_book.png",
           link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005388711907681",
-          chapters: ["Chapter 5. Requirements and User Stories"]
+          obligatoryReadings: ["Chapter 5. Requirements and User Stories"],
         },
         {
           title: "The State of Agile Software in 2018",
@@ -55,7 +55,7 @@ const readingsData = {
             description: "Esta lectura permite comprender el funcionamiento de los frameworks de pruebas unitarias en general. Identifica las características que tienen en común estos framework y el modo en que operan. Entender estos aspectos es de utilidad para diseñar y escribir mejores pruebas unitarias.",
             coverImage: "images/xunit_test_patterns_book.png",
             link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005388007407681",
-            chapters: ["Chapter 7. xUnit Basics"]
+            obligatoryReadings: ["Chapter 7. xUnit Basics"],
         },
         {
             title: "Patterns for Managing Source Code Branches",
@@ -81,7 +81,7 @@ const readingsData = {
             description: "<p>En este video Robert Martin hace una demostración de como utilizando TDD se puede hacer diseño y desarrollo de una funcionalidad de forma incremental. A lo largo de la demostración se discuten varios aspectos que inquietan comúnmente a los desarrolladores cuando empiezan a usar TDD. El video hace parte de la serie de videos de Clean Coders. Antes de ver el video, haga una lista de preguntas o dudas que le genera la aplicación de TDD a partir del trabajo realizado la semana anterior. Observe el video y analice las respuestas a sus preguntas que encontró en el video.</p>",
             coverImage: "images/clean_code_video_series_cover.png",
             link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005390072807681",
-            chapters: ["TDD Part, Part 2"]
+            obligatoryReadings: ["TDD Part, Part 2"],
         }
       ],
       7: [
@@ -100,14 +100,101 @@ const readingsData = {
             description: "<ul><li>En el proceso de desarrollo y operaciones ¿cuáles son los problemas que DevOps intenta resolver?</li><li>¿Cuales son los retos que una organización enfrenta para implementar las prácticas de DevOps?</li><li>¿Cuál es la diferencia entre integración continua, entrega continua y despliegue continuo?</li></ul>",
             coverImage: "images/devops_handbook_book.png",
             link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005388801607681",
-            chapters: ["Chapter 1. Agile, Continuous Delivery, and the Three Ways","Chapter 2. The First Way: The Principles of Flow","Chapter 3. The Second Way: The Principles of Feedback","Chapter 4. The Third Way: The Principles of Continual Learning and Experimentation"]
+            obligatoryReadings: ["Chapter 1. Agile, Continuous Delivery, and the Three Ways","Chapter 2. The First Way: The Principles of Flow","Chapter 3. The Second Way: The Principles of Feedback","Chapter 4. The Third Way: The Principles of Continual Learning and Experimentation"]
         }
       ]
     }
   },
   class2: {
     name: "MISW 4102 Principios de diseño y arquitectura de software",
-    weeks: {}
+    weeks: {
+      1: [
+          {
+            title: "Software Architecture in Practice, 4th Edition",
+            author: "Len Bass, Paul Clements, Rick Kazman",
+            coverImage: "images/software_architecture_in_practice_book.png",
+            link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005389583407681",
+            obligatoryReadings: ["Chapter 1. What Is Software Architecture?"],
+            optionalReadings: ["Chapter 2. Why Is Software Architecture Important?"]
+          },
+          {
+            title: "Design It!: From Programmer to Software Architect",
+            author: "Michael Keeling",
+            coverImage: "images/design_it_book.png",
+            link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005389009907681",
+            obligatoryReadings: ["Chapter 2. Design Thinking Fundamentals"],
+          }
+      ],
+      2: [
+        {
+          title: "Software Architecture in Practice, 4th Edition",
+          author: "Len Bass, Paul Clements, Rick Kazman",
+          coverImage: "images/software_architecture_in_practice_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005389583407681",
+          obligatoryReadings: ["Chapter 3. Understanding Quality Attributes", "Chapter 19. Architecturally Significant Requirements / Section 19.4 Capturing ASRs in a Utility Tree"],
+        },
+      ],
+      3: [
+        {
+          title: "Learning UML 2.0: A Pragmatic Introduction to UML",
+          author: "Russ Miles, Kim Hamilton",
+          coverImage: "images/learning_uml_2_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005388330407681",
+          obligatoryReadings: ["Chapter 1. Introduction", "Chapter 4. Modeling a System's Logical Structure: Introducing Classes and Class Diagrams", "Chapter 12. Managing and Reusing Your System's Parts: Component Diagrams", "Chapter 15. Modeling Your Deployed System: Deployment Diagrams"],
+        },
+        {
+          title: "Software Systems Architecture: Working With Stakeholders Using Viewpoints and Perspectives",
+          author: "Nick Rozanski, Eóin Woods",
+          coverImage: "images/software_systems_architecture.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005389031007681",
+          obligatoryReadings: ["Chapter 15. Introduction to the Viewpoint Catalog", "Chapter 16. The Context Viewpoint", "Chapter 17. The Functional Viewpoint", "Chapter 21. The Deployment Viewpoint"],
+        }
+      ],
+      4: [
+        {
+          title: "Documenting Software Architectures: Views and Beyond",
+          author: "Paul Clements, Felix Bachmann, Len Bass, David Garlan, James Ivers, Reed Little, Paulo Merson, Robert Nord, Judith Stafford",
+          coverImage: "images/documenting_software_architectures.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005387216907681",
+          obligatoryReadings: ["Chapter 1. Module Views", "Chapter 2. A Tour of Some Module Styles / 2.4 Layered Style", "Chapter 3. Component-and-Connector Views", "Chapter 4. A Tour of Some Component-and-Connector Styles / 4.3 Call-Return Styles", "Chapter 4. A Tour of Some Component-and-Connector Styles / 4.4 Event-Based Styles", "Chapter 5. Allocation Views and a Tour of Some Allocation Styles / 5.1 Overview", "Chapter 5. Allocation Views and a Tour of Some Allocation Styles / 5.2 Deployment Style"],
+          optionalReadings: ["Chapter 2. A Tour of Some Module Styles", "Chapter 4. A Tour of Some Component-and-Connector Styles", "Chapter 5. Allocation Views and a Tour of Some Allocation Styles"]
+        }
+      ],
+      5: [
+        {
+          title: "Software Architecture in Practice, 4th Edition",
+          author: "Len Bass, Paul Clements, Rick Kazman",
+          coverImage: "images/software_architecture_in_practice_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005389583407681",
+          obligatoryReadings: ["Chapter 9. Performance / 9.2 Tactics for Performance"],
+          optionalReadings: ["Chapter 9. Performance / 9.1 Performance General Scenario", "Chapter 9. Performance / 9.3 Tactics-Based Questionnaire for Performance", "Chapter 9. Performance / 9.4 Patterns for Performance"]
+        },
+        {
+          title: "Design Patterns: Elements of Reusable Object-Oriented Software",
+          author: "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+          coverImage: "images/design_patterns_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005388311107681",
+          obligatoryReadings: ["Chapter 3. Creational Patterns / Object Creational: Singleton", "Chapter 4. Structural Patterns / Object Structural: Facade", "Chapter 5. Behavioral Patterns / Object Behavioral: Mediator"],
+        },
+        {
+          title: "Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development",
+          author: "Craig Larman",
+          coverImage: "images/appying_uml_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005388174307681",
+          obligatoryReadings: ["Chapter 17. GRASP: Designing Objects with Responsibilities / Creator", "Chapter 17. GRASP: Designing Objects with Responsibilities / Low Coupling", "Chapter 17. GRASP: Designing Objects with Responsibilities / High Cohesion"],
+          optionalReadings: ["Chapter 17. GRASP: Designing Objects with Responsibilities"]
+        },
+        {
+          title: "The Principles of OOD",
+          coverImage: "",
+          link: "http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod",
+          obligatoryReadings: ["SRP", "DIP"],
+        }
+      ],
+      6: [],
+      7: [],
+      8: [],
+    }
   },
   class3: {
     name: "MISW 4103 Pruebas automatizadas",

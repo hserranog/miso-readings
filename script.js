@@ -84,7 +84,9 @@ const translations = {
     entireDocument: 'Read the entire document',
     noContent: 'No content to display here',
     reading: 'reading',
-    readings: 'readings'
+    readings: 'readings',
+    obligatoryReadings: 'Readings:',
+    optionalReadings: 'Optional Readings:'
   },
   es: {
     week: 'Semana',
@@ -94,7 +96,9 @@ const translations = {
     entireDocument: 'Leer todo el documento',
     noContent: 'No hay contenido para mostrar aquí',
     reading: 'lectura',
-    readings: 'lecturas'
+    readings: 'lecturas',
+    obligatoryReadings: 'Lecturas:',
+    optionalReadings: 'Lecturas Opcionales:'
   }
 };
 
@@ -269,27 +273,45 @@ function displayReadings() {
 function createReadingCard(reading) {
   const t = translations[currentLanguage];
   
-  // Handle missing chapters
-  let chaptersHtml = '';
-  if (reading.chapters && reading.chapters.length > 0) {
-    chaptersHtml = `
-      <div class="chapters">
-        <h4>${t.requiredReading}</h4>
+  // Handle obligatory and optional readings
+  let readingsHtml = '';
+  
+  // Obligatory readings
+  let obligatoryHtml = '';
+  if (reading.obligatoryReadings && reading.obligatoryReadings.length > 0) {
+    obligatoryHtml = `
+      <div class="obligatory-readings">
+        <h4>${t.obligatoryReadings}</h4>
         <ul>
-          ${reading.chapters.map(chapter => `<li>${chapter}</li>`).join('')}
+          ${reading.obligatoryReadings.map(chapter => `<li>${chapter}</li>`).join('')}
         </ul>
       </div>
     `;
   } else {
-    chaptersHtml = `
-      <div class="chapters">
-        <h4>${t.requiredReading}</h4>
+    obligatoryHtml = `
+      <div class="obligatory-readings">
+        <h4>${t.obligatoryReadings}</h4>
         <ul>
           <li>${t.entireDocument}</li>
         </ul>
       </div>
     `;
   }
+  
+  // Optional readings
+  let optionalHtml = '';
+  if (reading.optionalReadings && reading.optionalReadings.length > 0) {
+    optionalHtml = `
+      <div class="optional-readings">
+        <h4>${t.optionalReadings}</h4>
+        <ul>
+          ${reading.optionalReadings.map(chapter => `<li>${chapter}</li>`).join('')}
+        </ul>
+      </div>
+    `;
+  }
+  
+  readingsHtml = obligatoryHtml + optionalHtml;
   
   // Handle missing author
   let authorHtml = '';
@@ -317,7 +339,7 @@ function createReadingCard(reading) {
         ${authorHtml}
         ${descriptionHtml}
         
-        ${chaptersHtml}
+        ${readingsHtml}
         
         <a href="${reading.link}" target="_blank" class="book-link">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
