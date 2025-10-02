@@ -1,15 +1,114 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My GitHub Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Course Readings - Weekly Schedule</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello from GitHub Pages!</h1>
-  <button onclick="sayHello()">Click Me</button>
+  <!-- Header Navigation -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="logo">
+        <h1 data-en="MISO Readings" data-es="Lecturas MISO">Lecturas del Curso</h1>
+      </div>
+      <nav class="header-nav">
+        <div class="language-toggle">
+          <span class="language-label" data-en="Language:" data-es="Idioma:">Idioma:</span>
+          <button id="languageBtn" class="lang-btn">
+            <span class="lang-text">ES</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <h2 class="hero-title">MISW 4101 Prácticas esenciales de desarrollo de ingeniería de software para el agilismo</h2>
+    </div>
+  </section>
+
+  <!-- Course Selection -->
+  <section class="course-selection">
+    <div class="container">
+      <div class="selection-card">
+        <h3 data-en="Select Your Course" data-es="Selecciona Tu Curso">Selecciona Tu Curso</h3>
+        <div class="select-wrapper">
+          <select id="classSelect" class="course-select">
+            <!-- Options will be populated by JavaScript -->
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Week Navigation -->
+  <section class="week-navigation-section">
+    <div class="container">
+      <div class="week-nav-card">
+        <div class="week-info">
+          <h4 data-en="Current Week" data-es="Semana Actual">Semana Actual</h4>
+          <div class="week-display">
+            <span id="currentWeek" class="week-number">Semana 1</span>
+            <span id="readingCount" class="reading-count">(3 lecturas)</span>
+          </div>
+        </div>
+        <div class="week-controls">
+          <button id="prevWeek" class="week-btn prev-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span data-en="Previous" data-es="Anterior">Anterior</span>
+          </button>
+          <button id="nextWeek" class="week-btn next-btn">
+            <span data-en="Next" data-es="Siguiente">Siguiente</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="container">
+      <div id="readingsContainer" class="readings-grid">
+        <!-- Reading cards will be dynamically generated here -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-message" data-en="From the students to the students" data-es="De los estudiantes para los estudiantes">De los estudiantes para los estudiantes</p>
+        <p class="footer-message" data-en="Contributions at <a href='https://github.com/hserranog/miso-readings' target='_blank'><svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor'><path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/></svg> GitHub miso-readings</a>" data-es="Contribuciones en <a href='https://github.com/hserranog/miso-readings' target='_blank'><svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor'><path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/></svg> GitHub miso-readings</a>">Contribuciones en <a href='https://github.com/hserranog/miso-readings' target='_blank'><svg width='16' height='16' viewBox='0 0 24 24' fill='currentColor'><path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/></svg> GitHub miso-readings</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="image-modal">
+    <div class="modal-overlay">
+      <button class="modal-close" id="modalClose">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <div class="modal-content">
+        <img id="modalImage" src="" alt="" class="modal-image">
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
