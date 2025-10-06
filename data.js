@@ -265,6 +265,15 @@ const readingsData = {
   },
   class4: {
     name: "MISW 4104 Ingeniería de software para la web",
-    weeks: {}
+    weeks: {
+      1: [
+        {
+          title: "Single Page Application: Un viaje a las SPA a través de Angular y JavaScript",
+          author: "@davidjguru",
+          description: "<ul><li>En qué consiste un escenario Server Side Rendering (SSR)</li><li>Cómo se modificó ese escenario con la aparición de AJAX</li><li>Cómo se caracteriza “filosóficamente” una SPA</li><li>Cuáles son las claves fundamentales de una SPA</li><li>En qué consiste Web Storage API</li></ul>",
+          link: "https://medium.com/@davidjguru/single-page-application-un-viaje-a-las-spa-a-trav%C3%A9s-de-angular-y-javascript-337a2d18532"
+        }
+      ]
+    }
   }
 };
