@@ -272,6 +272,18 @@ const readingsData = {
           author: "@davidjguru",
           description: "<ul><li>En qué consiste un escenario Server Side Rendering (SSR)</li><li>Cómo se modificó ese escenario con la aparición de AJAX</li><li>Cómo se caracteriza “filosóficamente” una SPA</li><li>Cuáles son las claves fundamentales de una SPA</li><li>En qué consiste Web Storage API</li></ul>",
           link: "https://medium.com/@davidjguru/single-page-application-un-viaje-a-las-spa-a-trav%C3%A9s-de-angular-y-javascript-337a2d18532"
+        },
+        {
+          title: "Designing Web Usability: The Practice of Simplicity",
+          author: "Jakob Nielsen",
+          coverImage: "images/designing_web_usability_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005387922307681"
+        },
+        {
+          title: "Designing Interfaces: Patterns for Effective Interaction Design",
+          author: "Jenifer Tidwell",
+          coverImage: "images/designing_interfaces_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005386759207681"
         }
       ]
     }
