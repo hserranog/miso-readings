@@ -285,6 +285,14 @@ const readingsData = {
           coverImage: "images/designing_interfaces_book.png",
           link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1sib6to/alma991005386759207681"
         }
+      ],
+      2: [
+        {
+          title: "Designing Web Usability: The Practice of Simplicity",
+          author: "Jakob Nielsen",
+          coverImage: "images/designing_web_usability_book.png",
+          link: "https://uniandes.primo.exlibrisgroup.com/permalink/57U_UDLA/1g0omtq/alma991005387922307681"
+        }
       ]
     }
   }
